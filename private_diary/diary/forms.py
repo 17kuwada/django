@@ -8,7 +8,7 @@ class InquiryForm(forms.Form):
     
     def __init__ (self,*args,**kwargs):
 
-        super().__init__(self, args, kwargs)
+        super().__init__(*args, **kwargs)
 
         self.fields['name'].widget.attrs['class'] = 'forms-control'
         self.fields['name'].widget.attrs['placeholder'] = 'お名前をここに入力してください'
