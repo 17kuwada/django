@@ -1,5 +1,8 @@
 from django import forms
 
+# Djangoで用意されているメールを送信する機能
+from django.core.mail import EmailMessage
+
 class InquiryForm(forms.Form):
     name = forms.CharField(label='お名前',max_length=30)
     email = forms.EmailField(label='メールアドレス')
@@ -21,3 +24,6 @@ class InquiryForm(forms.Form):
 
         self.fields['message'].widget.attrs['class'] = 'forms-control'
         self.fields['message'].widget.attrs['placeholder'] = 'メッセージをここに入力してください'
+
+    # メール送信メソッドを追加する
+    def send_mail(self):

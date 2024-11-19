@@ -4,14 +4,14 @@
 
 {% block contents %}
 <div class="container">
-    <form method="post">
+    <form method="post" class="inquiry">
         {% csrf_token %}
         {{ form.non_field_errors }}
 
         {% for field in form %}
             <section>
                 <label for="{{ field.id_for_label }}">
-                    {{ field.label }}
+                    <span>{{ field.label }}</span>
                 </label>
                 {{ field }}
                 {{ field.errors }}
