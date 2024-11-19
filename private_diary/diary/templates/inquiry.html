@@ -7,11 +7,15 @@
     <form method="post">
         {% csrf_token %}
         {{ form.non_field_errors }}
-            <div>
-                <label for="{{ field.for.label }}"
-            </div>
-        {% for field in form %}
 
+        {% for field in form %}
+            <section>
+                <label for="{{ field.id_for_label }}">
+                    {{ field.label }}
+                </label>
+                {{ field }}
+                {{ field.errors }}
+            </section>
         {% endfor %}
         <button type='submit't>送信</button>
     </form>
